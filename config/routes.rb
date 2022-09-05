@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+  get '/signup', to: 'users#new'
+  get '/home', to: 'static_pages#home'
+  get '/help', to: 'static_pages#help'
+  get '/aboutTo', to: 'static_pages#aboutTo'
+  get '/contact', to: 'static_pages#contact'
  
-  get 'static_pages/help'
+  #get 'static_pages/help'
   
-  get 'static_pages/aboutTo'
-  get 'static_pages/contact'
+  #get 'static_pages/aboutTo'
+  #get 'static_pages/contact'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
