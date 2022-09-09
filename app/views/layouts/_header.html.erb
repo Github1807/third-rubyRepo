@@ -8,20 +8,88 @@
      </h1>
      </center>  
     </div>
+    
 
+    <div class="container">
+      <p class="box"><%= link_to "Home", home_path %></p>
+      <p class="box"><%= link_to "About", aboutTo_path %></p>
+      <p class="box"><%= link_to "Contact", contact_path%></p>
+      <p class="box"><%= link_to "Help", help_path%></p>
+      <% if logged_in? %>
+      <p class="box"><%= link_to "Update Profile",edit_user_path(current_user) %></p>
+      
+      <p class="box"><%= link_to "Profile", current_user %></p>
+      
+      <p class="box"><%= link_to "Logout", logout_path%></p>
+      <% else %>
+      <p class="box"><%= link_to "Login", login_path%></p>
+      <p class="box"><%= link_to "Signup", signup_path%></p>   
+      <%end%>
+    </div>
 
-    <nav>
-        <table width:"140%">
-          <tr> 
-              <th ><%= link_to "Home", home_path %></th>
-              <th width="20%"><%= link_to "About", aboutTo_path %></th>
-              <th width="20%"><%= link_to "Contact", contact_path%></th>
-              <th width="20%"><%= link_to "Help", help_path%></th>
-              <th width="20%"><%= link_to "Login", "#"%></th>
-              <th width="20%"><%= link_to "Signup", signup_path%> </th>
-          </tr>
-        </table>
-    </nav> 
-
- </div>
+ 
  </header> 
+
+ <style>
+
+ .container {
+    padding-top: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    
+    flex-flow: wrap;
+}
+
+
+.box {
+    align-items: center;
+    width: 13%;
+    height: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+  
+@media screen and (max-width:600px) {
+
+    .box{
+        margin-top: 50px;
+        padding-left: 100px;
+        width: 90%;
+
+    }
+
+    .link {
+        padding-left:100px ;
+        margin-top: -80px;
+    }
+
+    h1 {
+      text-align:center;
+      margin-top:80px;
+      font-size: 25px;
+    }
+
+}
+ 
+@media (max-width:600px) and (min-width:100px) {
+
+  .box{
+      margin-top: 50px;
+      padding-left: 50px;
+      width: 90%;
+
+  }
+
+  .link {
+      padding-left: 80px ;
+      margin-top: -50px;
+      font-size: 15px;
+  }
+
+}
+
+ 
+ </style>

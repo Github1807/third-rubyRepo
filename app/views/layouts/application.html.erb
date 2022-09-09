@@ -25,7 +25,10 @@
   <%= render 'layouts/header' %> 
 
 <center>  
-<div style="color:black; position:relative; top:100px; " > <%= yield %>
+<div style="color:black; position:relative; top:100px; " > <% flash.each do |m_type,msg| %><div><%= msg %> </div><% end %>
+  <%= yield %>
+
+<%= debug(params) if Rails.env.development?%>
 </body>
 </div>
 <%= render 'layouts/footer' %>
